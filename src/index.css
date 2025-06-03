@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background-base text-text-base;
+    font-family: 'Circular', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .sidebar-item {
+    @apply flex items-center gap-3 text-text-subdued hover:text-text-base transition-colors duration-200 py-2;
+  }
+  
+  .sidebar-item.active {
+    @apply text-text-base;
+  }
+  
+  .primary-button {
+    @apply bg-spotify-green hover:bg-spotify-greenHover text-black font-bold py-2 px-6 rounded-full 
+           transition-all duration-200 ease-out inline-flex items-center justify-center;
+  }
+  
+  .secondary-button {
+    @apply bg-background-highlight hover:bg-background-elevated text-text-base font-bold py-2 px-6 
+           rounded-full transition-all duration-200 ease-out inline-flex items-center justify-center;
+  }
+  
+  .card {
+    @apply bg-background-elevated p-4 rounded-md hover:bg-background-highlight 
+           transition-all duration-200 ease-out cursor-pointer;
+  }
+  
+  .progress-bar {
+    @apply w-full h-1 bg-background-highlight rounded-full overflow-hidden;
+  }
+  
+  .progress-bar-fill {
+    @apply h-full bg-text-base rounded-full transition-all duration-200 ease-out;
+  }
+  
+  .progress-bar:hover .progress-bar-fill {
+    @apply bg-spotify-green;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #5a5a5a;
+  border-radius: 6px;
+  border: 3px solid #121212;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #727272; 
+}
